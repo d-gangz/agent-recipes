@@ -1,6 +1,6 @@
-# App Template
+# Agent Recipes
 
-This is a full-stack app template adapted from the [Takeoff](https://JoinTakeoff.com/) template.
+Exploring agent recipes for building apps using [Vercel AI SDK](https://sdk.vercel.ai/docs/introduction). Inspired by [Anthropic's article on agents](https://www.anthropic.com/research/building-effective-agents).
 
 ## Tech Stack
 
