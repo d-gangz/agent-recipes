@@ -6,6 +6,8 @@ import {
   GENERATE_SCREENING_QUESTIONS_PROMPT
 } from "./prompts"
 
+// mainly use a reusable LLM response generator. Then used the .replace() method to replace the placeholder with the output of the previous step.
+
 // Reusable LLM response generator
 async function generateLLMResponse(prompt: string) {
   const { text } = await generateText({

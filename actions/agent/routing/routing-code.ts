@@ -7,6 +7,8 @@ import {
   GENERAL_PROMPT
 } from "./prompts"
 
+// utilised useobject for the LLM routing to ensure that output is definitely one of the categories. Pass them through a switch case to route them to the correct specialized LLM. Then use generateText for the specialized LLM responses.
+
 // Sample inputs
 const rawInputs = [
   "I was charged twice for my subscription this month. The first charge was on March 1st for $49.99, and another on March 5th. How do I get a refund for the duplicate charge?",
@@ -33,6 +35,7 @@ async function processInput(input: string, index: number) {
 
   // Step 1: Route the input using the router LLM
   const { object: category } = await generateObject<Category>({
+    // object: category is just renaming the output to "category".
     model: groq("llama-3.1-8b-instant"),
     output: "enum",
     enum: ["Billing/Refund Request", "Product Return", "General Inquiry"],
